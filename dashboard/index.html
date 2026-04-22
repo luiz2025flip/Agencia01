@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGÊNCIA SQUAD - Dashboard 2D</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div class="glass-bg"></div>
+    
+    <header class="main-header">
+        <div class="logo">
+            <span class="pulse"></span>
+            <h1>AGÊNCIA<span>SQUAD</span></h1>
+        </div>
+        <div class="active-task-banner">
+            <span class="label">CURRENT TASK:</span>
+            <span id="current-task-id" class="task-id">TASK_000</span>
+            <span id="current-task-name" class="task-name">Initializing...</span>
+        </div>
+        <div class="status-bar">
+            <div class="stat">System: <span class="online">ONLINE</span></div>
+            <div class="stat">Sovereignty: <span class="score">100/100</span></div>
+            <div class="stat">Active Mission: <span class="mission-id">#001</span></div>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <!-- Sidebar: Stats & Mission -->
+        <aside class="sidebar">
+            <section class="card mission-card">
+                <h3>MISSION BRIEFING</h3>
+                <div id="mission-content">
+                    <p class="loading">Sincronizando com Second Brain...</p>
+                </div>
+            </section>
+            
+            <section class="card control-panel">
+                <h3>SOVEREIGN CONTROLS</h3>
+                <div class="control-buttons">
+                    <button class="action-btn stop" onclick="sendCommand('EMERGENCY_STOP')">EMERGENCY STOP</button>
+                    <button class="action-btn" onclick="location.reload()">REFRESH VIEW</button>
+                </div>
+            </section>
+
+            <section class="card health-card">
+                <h3>SYSTEM HEALTH</h3>
+                <div class="health-stats">
+                    <div class="health-item">
+                        <span>CPU:</span>
+                        <div class="progress-bar"><div id="cpu-bar" style="width: 0%"></div></div>
+                        <span id="cpu-val">0%</span>
+                    </div>
+                    <div class="health-item">
+                        <span>RAM:</span>
+                        <div class="progress-bar"><div id="ram-bar" style="width: 0%"></div></div>
+                        <span id="ram-val">0%</span>
+                    </div>
+                    <div class="health-item">
+                        <span>Tor Node:</span>
+                        <span id="tor-status" class="status-indicator">CHECKING...</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card audit-card">
+                <h3>AUDIT LOG</h3>
+                <div class="audit-list" id="audit-feed">
+                    <!-- Logs will be injected here -->
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Content: Agents Grid -->
+        <section class="agents-container">
+            <div class="grid-header">
+                <h2>AGENT SQUADRON (19)</h2>
+                <div class="filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Validation</button>
+                    <button class="filter-btn">Support</button>
+                </div>
+            </div>
+            <div class="agents-grid" id="agents-grid">
+                <!-- Agent cards will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="system-time">T-Minus: 00:00:23</div>
+        <div class="version">Sovereign Protocol v7.9</div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <!-- Agent Inspection Modal -->
+    <div id="agent-modal" class="modal">
+        <div class="modal-content glass">
+            <header>
+                <h2 id="modal-agent-name">AGENT_NAME</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </header>
+            <div id="modal-body" class="markdown-body">
+                <p>Carregando prompt soberano...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

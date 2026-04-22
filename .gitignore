@@ -1,0 +1,14 @@
+__pycache__/
+*.log
+scripts/logs/
+dashboard/data/commands/
+.DS_Store
+node_modules/
+dist/
+build/
+venv/
+.venv/
+*.pyc
+*.pyo
+# Ignorar dados temporários do dashboard
+dashboard/data/status.json

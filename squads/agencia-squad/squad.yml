@@ -1,0 +1,103 @@
+name: Agencia Squad
+description: Squad de desenvolvimento de software baseado nos agentes do Multica
+agents:
+  - name: arquiteto
+    role: Arquiteto de Software
+    prompt_file: prompts/arquiteto.md
+    checkpoint: true
+
+  - name: prd_spec
+    role: Especificador de PRD
+    prompt_file: prompts/prd_spec.md
+    checkpoint: true
+
+  - name: tdd
+    role: Desenvolvedor TDD
+    prompt_file: prompts/tdd.md
+    checkpoint: false
+
+  - name: validador_prd
+    role: Validador de PRD
+    prompt_file: prompts/validador_prd.md
+    checkpoint: true
+
+  - name: validador_arquitetura
+    role: Validador de Arquitetura
+    prompt_file: prompts/validador_arquitetura.md
+    checkpoint: true
+
+  - name: validador_tdd
+    role: Validador de TDD
+    prompt_file: prompts/validador_tdd.md
+    checkpoint: true
+
+  - name: auditor_codigo
+    role: Auditor de Código
+    prompt_file: prompts/auditor_codigo.md
+    checkpoint: true
+
+  - name: documentacao
+    role: Agente Documentação Global
+    prompt_file: prompts/documentacao.md
+    checkpoint: true
+
+  - name: mcp
+    role: Integrador MCP
+    prompt_file: prompts/mcp.md
+    checkpoint: true
+
+  - name: faq
+    role: FAQ com Aprendizado
+    prompt_file: prompts/faq.md
+    checkpoint: false
+
+  - name: estrategista
+    role: Estrategista
+    prompt_file: prompts/estrategista.md
+    checkpoint: true
+
+  - name: recrutador
+    role: Recrutador/Orquestrador
+    prompt_file: prompts/recrutador.md
+    checkpoint: true
+
+
+  - name: gestor
+    role: Gestor de Projeto
+    prompt_file: prompts/gestor.md
+    checkpoint: true
+
+  - name: sentinel
+    role: Sentinel (Segurança)
+    prompt_file: prompts/sentinel.md
+    checkpoint: true
+
+  - name: monitor
+    role: Monitor de Qualidade
+    prompt_file: prompts/monitor.md
+    checkpoint: false
+
+  - name: mestre_prompt
+    role: Mestre de Prompts
+    prompt_file: prompts/mestre_prompt.md
+    checkpoint: false
+
+  - name: cliente
+    role: Agente Cliente Visão Usuário
+    prompt_file: prompts/cliente.md
+    checkpoint: true
+
+  - name: coder_hacker
+    role: Executor Final do Código
+    prompt_file: prompts/coder_hacker.md
+    checkpoint: false
+
+  - name: dba
+    role: Database Administrator
+    prompt_file: prompts/dba.md
+    checkpoint: true
+
+  - name: sre_devops
+    role: Engenheiro Site Reliability e Deploy
+    prompt_file: prompts/sre_devops.md
+    checkpoint: true
