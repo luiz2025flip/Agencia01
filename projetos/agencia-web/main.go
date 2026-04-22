@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"net/http"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 )
@@ -188,6 +189,21 @@ func detectAgent(message string) string {
 }
 
 func processMessage(msg, agent string) string {
+	// Tenta executar via OpenCode (Linux local)
+	cmd := exec.Command("opencode", "run", msg)
+	cmd.Dir = "/home/kali/Área de trabalho/AGENCIA01"
+	output, err := cmd.CombinedOutput()
+
+	if err == nil {
+		result := string(output)
+		// Limita response muito longo
+		if len(result) > 2000 {
+			result = result[:2000] + "\n... (continua)"
+		}
+		return "🤖 @" + agent + " executou:\n\n" + result
+	}
+
+	// Se OpenCode não disponível, usa respostas simulas
 	lower := strings.ToLower(msg)
 
 	// Respostas por agente
