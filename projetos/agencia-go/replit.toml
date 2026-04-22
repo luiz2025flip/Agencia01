@@ -1,0 +1,7 @@
+[1]
+language = "go"
+run = "./agencia"
+
+[2]
+language = "go"
+run = "go run main.go"

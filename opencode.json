@@ -1,0 +1,151 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/big-pickle",
+  "permission": {
+    "task": {
+      "*": "allow"
+    }
+  },
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "permission": {
+        "task": {
+          "*": "allow"
+        },
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "arquiteto": {
+      "mode": "subagent",
+      "description": "Arquiteto de Software Sênior - Define arquiteturas",
+      "prompt": "{file:.opencode/agents/arquiteto.md}",
+      "hidden": false
+    },
+    "engineer": {
+      "mode": "subagent",
+      "description": "Engenheiro de Software - Implementa código",
+      "prompt": "{file:.opencode/agents/engineer.md}",
+      "hidden": false,
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "tdd": {
+      "mode": "subagent",
+      "description": "Desenvolvedor TDD - Cria testes",
+      "prompt": "{file:.opencode/agents/tdd.md}",
+      "hidden": false
+    },
+    "auditor": {
+      "mode": "subagent",
+      "description": "Auditor de Código - Revisão e segurança",
+      "prompt": "{file:.opencode/agents/auditor.md}",
+      "hidden": false
+    },
+    "validador_prd": {
+      "mode": "subagent",
+      "description": "Validador de PRD - Valida requisitos",
+      "prompt": "{file:.opencode/agents/validador_prd.md}",
+      "hidden": false
+    },
+    "validador_arquitetura": {
+      "mode": "subagent",
+      "description": "Validador de Arquitetura",
+      "prompt": "{file:.opencode/agents/validador_arquitetura.md}",
+      "hidden": false
+    },
+    "validador_tdd": {
+      "mode": "subagent",
+      "description": "Validador de TDD",
+      "prompt": "{file:.opencode/agents/validador_tdd.md}",
+      "hidden": false
+    },
+    "recrutador": {
+      "mode": "subagent",
+      "description": "Recrutador - Orquestra agentes",
+      "prompt": "{file:.opencode/agents/recrutador.md}",
+      "hidden": false
+    },
+    "documentador": {
+      "mode": "subagent",
+      "description": "Documentador - Documentação técnica",
+      "prompt": "{file:.opencode/agents/documentador.md}",
+      "hidden": false
+    },
+    "faq": {
+      "mode": "subagent",
+      "description": "FAQ - Base de conhecimento",
+      "prompt": "{file:.opencode/agents/faq.md}",
+      "hidden": false
+    },
+    "mcp": {
+      "mode": "subagent",
+      "description": "MCP - Integração MCP",
+      "prompt": "{file:.opencode/agents/mcp.md}",
+      "hidden": false
+    },
+    "sentinel": {
+      "mode": "subagent",
+      "description": "Sentinel - Segurança",
+      "prompt": "{file:.opencode/agents/sentinel.md}",
+      "hidden": false
+    },
+    "monitor": {
+      "mode": "subagent",
+      "description": "Monitor - Qualidade e métricas",
+      "prompt": "{file:.opencode/agents/monitor.md}",
+      "hidden": false
+    },
+    "gestor": {
+      "mode": "subagent",
+      "description": "Gestor - Gestão de projetos",
+      "prompt": "{file:.opencode/agents/gestor.md}",
+      "hidden": false
+    },
+    "estrategista": {
+      "mode": "subagent",
+      "description": "Estrategista - Planejamento",
+      "prompt": "{file:.opencode/agents/estrategista.md}",
+      "hidden": false
+    },
+    "prd_spec": {
+      "mode": "subagent",
+      "description": "PRD Spec - Cria especificações",
+      "prompt": "{file:.opencode/agents/prd_spec.md}",
+      "hidden": false
+    },
+    "dba": {
+      "mode": "subagent",
+      "description": "DBA - Administrador de banco",
+      "prompt": "{file:.opencode/agents/dba.md}",
+      "hidden": false
+    },
+    "devops": {
+      "mode": "subagent",
+      "description": "DevOps - Infra e automação",
+      "prompt": "{file:.opencode/agents/devops.md}",
+      "hidden": false
+    },
+    "coder_hacker": {
+      "mode": "subagent",
+      "description": "Coder Hacker - Otimização",
+      "prompt": "{file:.opencode/agents/coder_hacker.md}",
+      "hidden": false
+    },
+    "mestre_prompt": {
+      "mode": "subagent",
+      "description": "Mestre Prompt - Engenharia de prompts",
+      "prompt": "{file:.opencode/agents/mestre_prompt.md}",
+      "hidden": false
+    },
+    "documentacao": {
+      "mode": "subagent",
+      "description": "Documentação global",
+      "prompt": "{file:.opencode/agents/documentacao.md}",
+      "hidden": false
+    }
+  }
+}

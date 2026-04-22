@@ -373,6 +373,62 @@ python3 projetos/second-brain-obsidian/boot_brain.py
 
 ---
 
+## ✅ Migração OpenCode Nativo (2026-04-22)
+
+### O Que Mudou
+- **OPENCODE como Orquestrador**: Agora o OpenCode nativos orquestra os agentes
+- **21 agentes** configurados como subagents
+- **Modelo free**: big-pickle não consome tokens do Antigravity
+- **Automação**: script `agencia.sh` para executar sem input manual
+- **Economia**: Só usa Antigravity quando necessário (webfetch, etc)
+
+### Estrutura Nova
+```
+.opencode/
+├── agents/           # 21 agentes convertidos
+│   ├── agencia.md   # Orquestrador principal (primary)
+│   ├── arquiteto.md
+│   ├── engineer.md   # Pode criar arquivos
+│   └── ... (mais 18)
+└── opencode.json   # Configuração do modelo
+agencia.sh         # Script de automação
+```
+
+### Configuração (opencode.json)
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/big-pickle",
+  "agent": {
+    "engineer": {
+      "permission": { "edit": "allow", "bash": "allow" }
+    }
+  }
+}
+```
+
+### Teste Realizado
+```bash
+# Criar função Python
+./agencia.sh tarefa "@engineer crie hello.py"
+
+# Resultado: hello.py criado e funcional!
+```
+
+### Scripts
+```bash
+./agencia.sh tarefa "@agente mensagem"  # Tarefa direta
+./agencia.sh api                      # Pipeline API
+./agencia.sh pipeline <msg>       # Pipeline completo
+```
+
+### Memória Persistente
+- **Obsidian**: `/home/kali/Documents/Agencia_Vault/50_OpenCode/`
+- `01_Memoria_OpenCode.md` - Visão geral
+- `02_Agentes_Quick.md` - Quick reference
+
+---
+
 *Documento criado em: 2024-04-21*
 *Última atualização: 2026-04-22*
 *Próxima atualização: Ao final de cada sessão*

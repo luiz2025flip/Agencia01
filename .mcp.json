@@ -6,8 +6,7 @@
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/home/kali/Área de trabalho/AGENCIA01"
-      ],
-      "env": {}
+      ]
     },
     "obsidian": {
       "command": "npx",
@@ -15,8 +14,7 @@
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/home/kali/Documents/Agencia_Vault"
-      ],
-      "env": {}
+      ]
     },
     "brave-search": {
       "command": "npx",
@@ -39,6 +37,10 @@
         "HTTPS_PROXY": "socks5://127.0.0.1:9050",
         "HTTP_PROXY": "socks5://127.0.0.1:9050"
       }
+    },
+    "replit": {
+      "url": "https://replit-mcp.com/server/mcp",
+      "transport": "streamable-http"
     }
   }
 }
