@@ -32,13 +32,14 @@ Este documento foi estabelecido como o cérebro central de contexto contínuo, o
 | 21 Abr 2026 | **Passividade do Dashboard:** O Agente Cliente reprovou a interface por ser apenas informativa. | Evoluir para "Cockpit Interativo". Interfaces não devem apenas mostrar dados, mas oferecer controle soberano imediato. |
 | `21 Abr 2026` | **Transparência de Agentes:** Notou-se que o usuário se sente mais seguro quando pode ver o "pensamento" (prompt) do agente. | Implementado o **Deep Inspection Modal** no cockpit. |
 | 21 Abr 2026 | **Protocolo Triple-ID:** Logs sem IDs de Projeto e Tarefa geram confusão em auditorias rápidas. | Criado o padrão `[Timestamp MS] [Proj ID] [Task ID]` para toda a telemetria. |
-| 21 Abr 2026 | **UX vs Alerts:** Janelas de `alert()` quebram o fluxo de observação soberana. | Migração total para **Toast Notifications** integradas à UI. |
+| 22 Abr 2026 | Missão #005: Deep Transparency | Concluída. /inspect rodando e Modais integrados. |
+| 22 Abr 2026 | Ativação UI/UX Master | Agente criado e squad atualizado. |
 
 ## Roadmap de Aceleração Futura 
 *(Identificado como defasagem para alcançarmos nossa independência 100%)*
-- [ ] Incorporação de agente para infraestrutura **SRE / DevOps** (Gerenciar Cloud, Ci/CD, Infra as Code, Docker).
-- [ ] Criação de papel **UI / UX Master** focado em design semântico e A11y.
-- [ ] Instanciação de um Especialista de **Banco de Dados (DBA)** para sistemas complexos.
+- [x] Incorporação de agente para infraestrutura **SRE / DevOps** (Incorporado no squad.yml).
+- [x] Criação de papel **UI / UX Master** (Design Semântico ativado).
+- [x] Instanciação de um Especialista de **Banco de Dados (DBA)** (Incorporado no squad.yml).
 - [ ] **Consumo TaskMaster:** Integrar lógica de DAG (Grafos) do projeto Desktop/TaskMaster para gerenciar squads não-lineares.
 - [ ] **SecretVault v2:** Migrar gestão de segredos do Agencia_System para o AGENCIA01 usando criptografia AES-GCM.
 

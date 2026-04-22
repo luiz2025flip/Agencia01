@@ -50,6 +50,7 @@ function renderAgents(agents) {
         if (a.name.includes("tdd")) icon = "🧪";
         if (a.name.includes("auditor")) icon = "🔍";
         if (a.name.includes("estrategista")) icon = "🧠";
+        if (a.name.includes("ui_ux")) icon = "🎨";
         
         return `
             <div class="agent-card ${a.status}" onclick="inspectAgent('${a.name}')">

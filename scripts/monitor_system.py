@@ -7,6 +7,8 @@ import sys
 from datetime import datetime
 
 base_path = "/home/kali/Área de trabalho/AGENCIA01"
+if base_path not in sys.path:
+    sys.path.append(base_path)
 output_path = os.path.join(base_path, "dashboard/data/status.json")
 missions_path = os.path.join(base_path, "dashboard/data/missions.json")
 squad_yml_path = os.path.join(base_path, "squads/agencia-squad/squad.yml")
@@ -46,12 +48,28 @@ def get_agents():
             })
     return agents
 
+from utils.dag import DAGManager, TaskStatus
+
 def get_mission_data():
     if os.path.exists(missions_path):
         with open(missions_path, 'r') as f:
             missions = json.load(f)
             active = next((m for m in missions if m['status'] == "ACTIVE"), missions[-1])
-            doing_task = next((s for s in active.get('steps', []) if s['status'] == "doing"), {"id": "IDLE", "name": "Waiting"})
+            
+            # Integrando Lógica de DAG (TaskMaster)
+            steps = active.get('steps', [])
+            dag = DAGManager()
+            # Mapeia steps do JSON para o DAG
+            for s in steps:
+                t = dag.add_task(s['name'], s.get('depends_on', []))
+                dag.tasks[s['id']] = dag.tasks.pop(t) # Mantém IDs originais
+                dag.tasks[s['id']].id = s['id']
+                if s['status'] == "done":
+                    dag.tasks[s['id']].status = TaskStatus.COMPLETED
+                elif s['status'] == "doing":
+                    dag.tasks[s['id']].status = TaskStatus.PROCESSING
+
+            doing_task = next((s for s in steps if s['status'] == "doing"), {"id": "IDLE", "name": "Waiting"})
             return active, doing_task
     return {}, {}
 

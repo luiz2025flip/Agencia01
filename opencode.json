@@ -146,6 +146,12 @@
       "description": "Documentação global",
       "prompt": "{file:.opencode/agents/documentacao.md}",
       "hidden": false
+    },
+    "ui_ux_master": {
+      "mode": "subagent",
+      "description": "UI/UX Master & Semantic Design",
+      "prompt": "{file:.opencode/agents/ui_ux_master.md}",
+      "hidden": false
     }
   }
 }

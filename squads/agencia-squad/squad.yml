@@ -101,3 +101,8 @@ agents:
     role: Engenheiro Site Reliability e Deploy
     prompt_file: prompts/sre_devops.md
     checkpoint: true
+
+  - name: ui_ux_master
+    role: UI/UX Master & Semantic Design
+    prompt_file: prompts/ui_ux_master.md
+    checkpoint: false
